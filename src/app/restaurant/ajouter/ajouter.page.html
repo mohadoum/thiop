@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Ajouter un resto</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/restaurant"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <form (submit)="ajouterResto()" [formGroup]="formGroup" *ngIf="resto" method="POST">
+    <ion-list>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input formControlName="nom" type="text"></ion-input>
+        <ion-label color="danger" *ngIf="formGroup.dirty && (formGroup.controls.nom.hasError('required') || formGroup.controls.nom.hasError('minlength'))">Doit contenir au moins 2 caractères</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Position géographique</ion-label>
+        <ion-input placeholder="latitude" formControlName="latitude"></ion-input>
+        <ion-input placeholder="longitude" formControlName="longitude"></ion-input>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" expand="full" [disabled]="formGroup.invalid">Enregistrer</ion-button>
+  </form>
+</ion-content>

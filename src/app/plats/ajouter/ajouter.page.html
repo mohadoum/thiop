@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title> Ajouter un plat </ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="/tabs/plats"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <form (submit)="ajouterPlat()" [formGroup]="formGroup" *ngIf="plat" method="POST">
+    <ion-list>
+      <ion-item>
+        <ion-label>Le Restaurant?</ion-label>
+        <ion-select formControlName="restaurant">
+          <ion-select-option *ngFor="let resto of restos" value={{resto.id}}>{{resto.nom}}</ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Nom</ion-label>
+        <ion-input formControlName="nom" type="text"></ion-input>
+        <ion-label color="danger" *ngIf="formGroup.touched && (formGroup.controls.nom.hasError('minlength') || formGroup.controls.nom.hasError('minlength'))">Doit contenir au moins 2 caractères</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Prix</ion-label>
+        <ion-input formControlName="prix"  type="number"></ion-input>
+        <ion-label color="danger" *ngIf="formGroup.touched && formGroup.controls.prix.hasError('required')">Champ obligatoire</ion-label>
+
+      </ion-item>
+      <ion-item>
+        <ion-label position="stacked">Description</ion-label>
+        <ion-textarea formControlName="description"></ion-textarea>
+      </ion-item>
+    </ion-list>
+    <ion-button type="submit" expand="full" [disabled]="formGroup.invalid">Enregistrer</ion-button>
+  </form>
+</ion-content>

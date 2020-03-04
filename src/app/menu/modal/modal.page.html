@@ -1,0 +1,24 @@
+<ion-header>
+    <ion-toolbar>
+      <ion-title>Choix des plats du menu</ion-title>
+      <ion-buttons slot="end">
+        <ion-button (click)="dismiss()">Fermer</ion-button>
+      </ion-buttons>
+    </ion-toolbar>
+</ion-header>
+  
+<ion-content fullscreen class="ion-padding">
+    <ion-label> Checker tous les plats du jour </ion-label>
+    <form (submit)="definirMenu()" [formGroup]="formGroup" method="POST" *ngIf="plats && menuPlatIds">
+        <ion-list>
+          <ion-item>
+            <ion-label>Plats</ion-label>
+            <ion-select multiple="true" formControlName="plats" value={{menuPlatsIds}} placeholder="cliquez ici!" [interfaceOptions]="customAlertOptions" interface="alert">
+              <ion-select-option  *ngFor="let plat of plats" value={{plat.id}}> {{plat.nom}} <span *ngIf="plat.restaurant">chez {{plat.restaurant.nom}}</span> à {{plat.prix}} FCFA </ion-select-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+      
+        <ion-button type="submit" expand="full" [disabled]="formGroup.invalid">Enregistrer</ion-button> 
+    </form>
+</ion-content>

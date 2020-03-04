@@ -1,0 +1,30 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>
+      Nos plats
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content fullscreen class="ion-padding">
+  <div>
+    <ion-list>
+        <ion-item *ngFor="let plat of plats" >
+          <ion-label>
+            <h1>{{plat.nom}}</h1>
+            <h3 class="ion-float-right"> à <ion-text color="primary"> {{plat.prix}} FCFA </ion-text> <span *ngIf="plat.restaurant"><b>Chez {{plat.restaurant.nom}}</b></span> </h3>
+            <br>
+            <div class="ion-float-right">
+                <ion-button size="small" (click)="modifierPlat(plat.id)" color="light"><ion-icon name="create" color="warning" slot="icon-only"></ion-icon></ion-button>
+                <ion-button size="small" (click)="delete(plat)" color="light"><ion-icon name="trash"  color="danger" slot="icon-only"></ion-icon></ion-button>                          
+            </div>
+          </ion-label>
+        </ion-item>
+    </ion-list>
+  </div>
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+     <ion-fab-button routerLink="/tabs/plats/ajouter">
+     <ion-icon name="add"></ion-icon> 
+    </ion-fab-button> 
+  </ion-fab>
+</ion-content>
