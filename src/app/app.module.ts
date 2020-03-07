@@ -15,10 +15,13 @@ import { RestoService } from './service/restaurant.service';
 import { MenuService } from './service/menu.service';
 import { ToastService } from './service/toast.service';
 
+/*import { AgmCoreModule } from '@agm/core'; */
+
+
 @NgModule({
   declarations: [AppComponent],
   entryComponents: [],
-  imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule],
+imports: [BrowserModule, IonicModule.forRoot(), AppRoutingModule, HttpClientModule/*, AgmCoreModule*/],
   providers: [
     StatusBar,
     SplashScreen,

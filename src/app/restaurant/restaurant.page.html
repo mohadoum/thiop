@@ -8,7 +8,13 @@
 
 <ion-content fullscreen class="ion-padding">
   <div>
+    <div>
+        <ion-label><strong>GoogleMaps</strong></ion-label>
+        <ion-button expand="full" color='primary' routerLink="/tabs/restaurant/maps">Voir la carte GoogleMaps!</ion-button>
+    </div>
+    <br>
     <ion-list>
+        <ion-label><strong>La liste</strong></ion-label>
         <ion-item *ngFor="let resto of restos" >
           <ion-label>{{resto.nom}}</ion-label>
           <ion-icon name="create" color="warning" (click)="modifierRestaurant(resto.id)"></ion-icon>

@@ -61,9 +61,26 @@ export class ModalPage implements OnInit {
   ngOnInit() {}
 
   dismiss() {
+    if (this.plats != null ) {
+      this.setRestaurantInMenuPlats();
+    }
     this.modalCtrl.dismiss({
       menu: this.menu
     });
+  }
+
+  setRestaurantInMenuPlats() {
+    let plat: Plat;
+    let menuPlat: Plat;
+    let menuPlats: Plat[] = [];
+    for (menuPlat of this.menu.plats) {
+      for (plat of this.plats) {
+        if (plat.id === menuPlat.id) {
+          menuPlats.push(plat);
+        }
+      }
+    }
+    this.menu.plats = menuPlats;
   }
 
   definirMenu() {

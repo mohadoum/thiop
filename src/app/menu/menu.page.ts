@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { ModalController } from '@ionic/angular';
 import { ModalPage } from './modal/modal.page';
 
@@ -21,30 +21,35 @@ export class MenuPage implements OnInit {
   menu: Menu;
   slideOpts: any;
 
+
   constructor(private service: PlatsService, public modalController: ModalController, private menuService: MenuService) {
+
     this.service.getPlats().subscribe(
       response => { this.plats = response; }
       , error => { window.alert('Echec de chargement des plats au niveau du modal! \n Veuillez contacter votre administrateur de site'); }
     );
 
     this.menuService.getMenus().subscribe(
-      response => { this.menu = response.shift(); }
+      response => { this.menu = response.shift(); if (this.plats != null) {this.setRestaurantInMenuPlats(); } }
       , error => { window.alert('Echec de chargement du menu! Veuillez contacter votre admnistrateur de site!'); }
     );
 
     this.slideOpts = {
-      grabCursor: true,
-      cubeEffect: {
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94,
-      },
+      speed: 2000,
+      effect: 'cube',
       on: {
         beforeInit() {
           const swiper = this;
           swiper.classNames.push(`${swiper.params.containerModifierClass}cube`);
           swiper.classNames.push(`${swiper.params.containerModifierClass}3d`);
+
+          setInterval(() => {
+            if (!swiper.isEnd) {
+              swiper.slideNext();
+            } else {
+              swiper.slideTo(0);
+            }
+          }, 5000);
 
           const overwriteParams = {
             slidesPerView: 1,
@@ -184,12 +189,29 @@ export class MenuPage implements OnInit {
           if (swiper.params.cubeEffect.shadow && !swiper.isHorizontal()) {
             $el.find('.swiper-cube-shadow').transition(duration);
           }
-        },
+        }
       }
     };
-    alert(JSON.stringify(this.slideOpts));
   }
 
+
+  setRestaurantInMenuPlats() {
+    let plat: Plat;
+    let menuPlat: Plat;
+    let menuPlats: Plat[] = [];
+    for (menuPlat of this.menu.plats) {
+      for (plat of this.plats) {
+        if (plat.id === menuPlat.id) {
+          menuPlats.push(plat);
+        }
+      }
+    }
+    this.menu.plats = menuPlats;
+  }
+
+  getPictureNumero() {
+      return Math.floor((Math.random() * (9 - 1) + 1)).toString();
+  }
 
   async presentModal() {
       this.modal = await this.modalController.create({

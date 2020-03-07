@@ -1,0 +1,8 @@
+{
+  "appId": "com.esp.thiop",
+  "appName": "thiop",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www",
+  "cordova": {}
+}

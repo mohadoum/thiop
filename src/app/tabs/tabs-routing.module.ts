@@ -54,6 +54,11 @@ const routes: Routes = [
             path: 'modifier/:id',
             loadChildren: () =>
               import('../restaurant/modifier/modifier.module').then(m => m.ModifierPageModule)
+          },
+          {
+            path: 'maps',
+            loadChildren: () =>
+              import('../google-maps-page/google-maps-page.module').then(m => m.GoogleMapsPagePageModule)
           }
         ]
       },

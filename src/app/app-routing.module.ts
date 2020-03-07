@@ -9,6 +9,10 @@ const routes: Routes = [
   {
     path: 'restaurant',
     loadChildren: () => import('./restaurant/restaurant.module').then( m => m.RestaurantPageModule)
+  },
+  {
+    path: 'google-maps-page',
+    loadChildren: () => import('./google-maps-page/google-maps-page.module').then( m => m.GoogleMapsPagePageModule)
   }
 ];
 @NgModule({
