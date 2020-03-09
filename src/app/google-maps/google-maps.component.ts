@@ -1,6 +1,9 @@
 import { Component, Input, Renderer2, ElementRef, Inject, OnInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 import { Plugins, Geolocation } from '@capacitor/core';
+import { RestoService } from 'src/app/service/restaurant.service';
+import { Restaurant } from 'src/app/Models/restaurant';
+import { ToastService } from '../service/toast.service';
 
 /// <reference types=”@types/googlemaps” />
 declare var google: any;
@@ -19,10 +22,17 @@ export class GoogleMapsComponent implements OnInit {
     public markers: any[] = [];
     private mapsLoaded: boolean = false;
     private networkHandler = null;
-
-    constructor(private renderer: Renderer2, private element: ElementRef, @Inject(DOCUMENT) private _document) {
+    private restos: Restaurant[] = [];
+    constructor(private renderer: Renderer2, private element: ElementRef, @Inject(DOCUMENT) private _document, private restoService: RestoService, private toastService: ToastService) {
 
     }
+    addRestaurantMarker() {
+        let resto: Restaurant;
+        for (resto of this.restos) {
+            this.addMarker(resto.latitude, resto.longitude, resto.nom);
+        }
+      }
+
 
     ngOnInit() {
 
@@ -165,6 +175,16 @@ export class GoogleMapsComponent implements OnInit {
 
                 this.map = new google.maps.Map(this.element.nativeElement, mapOptions);
                 this.setLocationMarker(position.coords.latitude, position.coords.longitude, '../../assets/icon/position.png', 'Vous!');
+
+                this.restoService.getRestaurants().subscribe(
+                    response => {
+                                  this.restos = response;
+                                  this.addRestaurantMarker();
+                                  this.toastService.presentToast('Représentation des restaurants effectuée avec succes.');
+                                } ,
+                    error => { this.toastService.presentToast('Echec de la Représentation des restaurants', 'danger'); }
+                );
+
                 resolve(true);
 
             }, (err) => {
@@ -213,6 +233,5 @@ export class GoogleMapsComponent implements OnInit {
         });
         this.markers.push(marker);
     }
-      
 
 }
