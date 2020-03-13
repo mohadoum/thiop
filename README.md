@@ -35,8 +35,10 @@ Yogurtlandia | 14.688398 | -17.471799
 Best Food | 14.730904 | -17.493542
 Evalito | 14.727815 | -17.486641
 Le poulailler | 14.731975 | -17.483004
-Boulangerie Patisserie Chez Adja | 14.725189 | -17.494473
-
-
+Boulangerie Patisserie Chez Adja | 14.725189 | -17.494473    
+    
+    
+Résultat:    
+![ajout d'un resto](https://drive.google.com/open?id=1aO7FrurqpKgBB-JJPaizWLj4Hb_a2hz1)   ![liste des restos](https://drive.google.com/open?id=1fsppPIGKFEpduQeFcxZMxlMMAmfPGDro)
 
 
