@@ -39,6 +39,6 @@ Boulangerie Patisserie Chez Adja | 14.725189 | -17.494473
     
     
 Résultat:    
-![ajout d'un resto](https://drive.google.com/open?id=1vMVRxsgZblhJCm-gFmt0Wj8KsPIskqzU)   ![liste des restos](https://drive.google.com/uc?id=1fsppPIGKFEpduQeFcxZMxlMMAmfPGDro)
+![ajout d'un resto](https://drive.google.com/uc?id=1vMVRxsgZblhJCm-gFmt0Wj8KsPIskqzU)   ![liste des restos](https://drive.google.com/uc?id=1fsppPIGKFEpduQeFcxZMxlMMAmfPGDro)
 
 
