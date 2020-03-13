@@ -1,3 +1,5 @@
+# Thiop    
+
 Bienvenue dans l'application cliente de gestion de commandes de restaurants. Cette dernière a été développée avec ionic. Elle comporte actuellement les fonctionnalités suivantes:    
 * Gestion des restaurants (ajout, modification et suppression)
 * Gestion des plats (ajout, modification et suppression)
