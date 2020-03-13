@@ -42,4 +42,18 @@ Résultat:
 ![ajout d'un resto](https://drive.google.com/uc?id=1vMVRxsgZblhJCm-gFmt0Wj8KsPIskqzU)   ![liste des restos](https://drive.google.com/uc?id=1fsppPIGKFEpduQeFcxZMxlMMAmfPGDro)    
     
 ###### b. Voir carte GoogleMaps
-![aperçu de la carte](https://drive.google.com/uc?id=1zALzHuGZviFg9gwa7LC00nhSZThLQ6Ff)
+![aperçu de la carte](https://drive.google.com/uc?id=1zALzHuGZviFg9gwa7LC00nhSZThLQ6Ff)    
+    
+###### c. Ajout de plats
+Maintenant nous allons pouvoir commencer à ajouter les succulents plats que nous ferons déguster à nos clients.    
+Et pour chacun, on indiquera le restaurant fournisseur.    
+**Les données suivantes** peuvent être utilisées pour les renseigner rapidement:    
+Nom	| Prix | Description	
+--- | ---- | --------- 
+Domoda | 500 | L'un des plats préférés des femmes sénégalaises.
+Maffé | 600 | Plat d'origine bambara composé de riz blanc et d'une sauce au kandia.
+Soupou kandia | 700 | Riz blanc à la sauce kandia.
+Thiébou dienou diagua | 700 | Du thiébou diene de base avec de la sauce et des boulettes de poissons.
+Thiébou diene | 600 | Plat préféré des sénégalais.
+Maxalou saloum | 750 | Riz d'origine du bassin arachidier.
+
