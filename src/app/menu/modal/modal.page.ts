@@ -25,7 +25,7 @@ export class ModalPage implements OnInit {
   formGroup: FormGroup;
   customAlertOptions: any;
 
-  constructor(private modalCtrl: ModalController, private builder: FormBuilder, private navParams: NavParams, 
+  constructor(private modalCtrl: ModalController, private builder: FormBuilder, private navParams: NavParams,
     private menuService: MenuService, private toastService: ToastService) {
 
     this.customAlertOptions = {
@@ -73,14 +73,16 @@ export class ModalPage implements OnInit {
     let plat: Plat;
     let menuPlat: Plat;
     let menuPlats: Plat[] = [];
-    for (menuPlat of this.menu.plats) {
-      for (plat of this.plats) {
-        if (plat.id === menuPlat.id) {
-          menuPlats.push(plat);
+    if (this.menu != null) {
+      for (menuPlat of this.menu.plats) {
+        for (plat of this.plats) {
+          if (plat.id === menuPlat.id) {
+            menuPlats.push(plat);
+          }
         }
       }
+      this.menu.plats = menuPlats;
     }
-    this.menu.plats = menuPlats;
   }
 
   definirMenu() {
@@ -99,9 +101,12 @@ export class ModalPage implements OnInit {
     }
 
     menu = new Menu();
-    menu.id = this.menu.id;
+    if (this.menu != null) {
+      menu.id = this.menu.id;
+    }
     menu.plats = selectedPlats;
 
+    window.alert(JSON.stringify(menu));
     if (this.menu == null) {
       this.menuService.postMenu(menu).subscribe(
         response => {this.toastService.presentToast('Le menu a été défini avec succés!');
