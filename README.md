@@ -61,3 +61,7 @@ Maxalou saloum  |  750  |  Riz d'origine du bassin arachidier.
 Résultat:    
 ![ajout d'un plat](https://drive.google.com/uc?id=1SNZ38E45JYXy6-oIpHgq1OzMmP1cCV_G)   ![liste des plats](https://drive.google.com/uc?id=1WPVF5V_FT5nTQ_RZq8qIkkWA28z6mVL-)    
 
+###### d. Menu    
+Parmi tous ces bons plats de divers restaurants, nous allons maintenant pourvoir concocter pour nos clients des menus de qualité.
+L'image qui suit illustre un plat du menu.    
+![menu](https://drive.google.com/uc?id=1soZHqdFClhrfNxDAxUrRx4AeWdlhbcwl)
