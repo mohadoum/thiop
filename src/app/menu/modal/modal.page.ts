@@ -106,7 +106,6 @@ export class ModalPage implements OnInit {
     }
     menu.plats = selectedPlats;
 
-    window.alert(JSON.stringify(menu));
     if (this.menu == null) {
       this.menuService.postMenu(menu).subscribe(
         response => {this.toastService.presentToast('Le menu a été défini avec succés!');
