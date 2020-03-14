@@ -25,13 +25,15 @@ export class MenuPage implements OnInit {
   constructor(private service: PlatsService, public modalController: ModalController, private menuService: MenuService) {
 
     this.service.getPlats().subscribe(
-      response => { this.plats = response; }
+      response => { this.plats = response;
+                    this.menuService.getMenus().subscribe(
+                      resp => { this.menu = (resp != null) ? resp.shift() : null;
+                                if (this.plats != null) {this.setRestaurantInMenuPlats(); }
+                              }
+                      , error => { window.alert('Echec de chargement du menu! Veuillez contacter votre admnistrateur de site!'); }
+                    );
+      }
       , error => { window.alert('Echec de chargement des plats au niveau du modal! \n Veuillez contacter votre administrateur de site'); }
-    );
-
-    this.menuService.getMenus().subscribe(
-      response => { this.menu = response.shift(); if (this.plats != null) {this.setRestaurantInMenuPlats(); } }
-      , error => { window.alert('Echec de chargement du menu! Veuillez contacter votre admnistrateur de site!'); }
     );
 
     this.slideOpts = {
@@ -199,14 +201,16 @@ export class MenuPage implements OnInit {
     let plat: Plat;
     let menuPlat: Plat;
     let menuPlats: Plat[] = [];
-    for (menuPlat of this.menu.plats) {
-      for (plat of this.plats) {
-        if (plat.id === menuPlat.id) {
-          menuPlats.push(plat);
+    if (this.menu != null) {
+      for (menuPlat of this.menu.plats) {
+        for (plat of this.plats) {
+          if (plat.id === menuPlat.id) {
+            menuPlats.push(plat);
+          }
         }
       }
+      this.menu.plats = menuPlats;
     }
-    this.menu.plats = menuPlats;
   }
 
   getPictureNumero() {
