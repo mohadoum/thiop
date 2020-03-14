@@ -41,7 +41,8 @@ Boulangerie Patisserie Chez Adja | 14.725189 | -17.494473
 Résultat:    
 ![ajout d'un resto](https://drive.google.com/uc?id=1vMVRxsgZblhJCm-gFmt0Wj8KsPIskqzU)   ![liste des restos](https://drive.google.com/uc?id=1fsppPIGKFEpduQeFcxZMxlMMAmfPGDro)    
     
-###### b. Voir carte GoogleMaps
+###### b. Voir carte GoogleMaps    
+
 ![aperçu de la carte](https://drive.google.com/uc?id=1zALzHuGZviFg9gwa7LC00nhSZThLQ6Ff)    
     
 ###### c. Ajout de plats
@@ -59,9 +60,11 @@ Thiébou diene  |  600  |  Plat préféré des sénégalais.
 Maxalou saloum  |  750  |  Riz d'origine du bassin arachidier.    
     
 Résultat:    
+    
 ![ajout d'un plat](https://drive.google.com/uc?id=1SNZ38E45JYXy6-oIpHgq1OzMmP1cCV_G)   ![liste des plats](https://drive.google.com/uc?id=1WPVF5V_FT5nTQ_RZq8qIkkWA28z6mVL-)    
 
 ###### d. Menu    
 Parmi tous ces bons plats de divers restaurants, nous allons maintenant pourvoir concocter pour nos clients des menus de qualité.
 L'image qui suit illustre un plat du menu.    
+    
 ![menu](https://drive.google.com/uc?id=1soZHqdFClhrfNxDAxUrRx4AeWdlhbcwl)
