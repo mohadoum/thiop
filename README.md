@@ -43,7 +43,7 @@ Résultat:
     
 ###### b. Voir carte GoogleMaps    
 
-![aperçu de la carte](https://drive.google.com/uc?id=1zALzHuGZviFg9gwa7LC00nhSZThLQ6Ff)    
+![aperçu de la carte](https://drive.google.com/uc?id=14j3SN8HAMxFpkk4Wzg8lAo7nb_VNRpFJ)    
     
 ###### c. Ajout de plats
 Maintenant nous allons pouvoir commencer à ajouter les succulents plats que nous ferons déguster à nos clients.    
@@ -67,4 +67,4 @@ Résultat:
 Parmi tous ces bons plats de divers restaurants, nous allons maintenant pourvoir concocter pour nos clients des menus de qualité.
 L'image qui suit illustre un plat du menu.    
     
-![menu](https://drive.google.com/uc?id=1soZHqdFClhrfNxDAxUrRx4AeWdlhbcwl)
+![menu](https://drive.google.com/uc?id=1aNoibJc1QQrgzAEUjtQFJd610JbQIaQK)
