@@ -14,7 +14,7 @@ Aprés avoir réussi l'intégration du serveur backend. Nous pouvons maintenant 
 Téléchargez le repository courant dans votre local. Puis décompressez-le.    
 
 ### 2. Intégration
-Placez-vous dans le repertoire racine du dossier décompressé. Puis exécutez la **commande suivante afin d'installer les dépendances** du projet. 
+Placez-vous dans le repertoire racine du dossier décompressé. Puis exécutez la **commande suivante afin d'installer les dépendances** du projet:    
 ```npm install```    
     
 ### 3. Scénario de Test
