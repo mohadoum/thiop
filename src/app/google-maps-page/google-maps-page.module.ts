@@ -19,7 +19,7 @@ import { GoogleMapsComponent } from '../google-maps/google-maps.component';
     IonicModule,
     GoogleMapsPagePageRoutingModule,
     /*AgmCoreModule.forRoot({
-      apiKey: 'AIzaSyA6jTl2jABkMFTqQjpCF75sGMlY6yhdXF0',
+      apiKey: 'your google api key',
       libraries: ['places']
       }),*/
   ],
