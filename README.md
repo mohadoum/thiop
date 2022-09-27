@@ -6,7 +6,7 @@ Bienvenue dans l'application cliente de gestion de commandes de restaurants. Cet
 * Gestion du menu
 * Affichage sur une carte Google Maps des restaurants et de votre position géographique.
 
-Mais avant de goûter à cela. Nous allons d'abord configurer notre serveur backend. Alors nous allons d'abord aller consulter le repository https://github.com/MT98/thiopstrapi. 
+Mais avant de goûter à cela. Nous allons d'abord configurer notre serveur backend. Alors nous allons d'abord aller consulter le repository https://github.com/mohadoum/thiopstrapi. 
 
 Aprés avoir réussi l'intégration du serveur backend. Nous pouvons maintenant commencer à intégrer notre application cliente.
 
